@@ -26,7 +26,7 @@ public class TCPConnection {  //реализация TCP соединения
         out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), Charset.forName("UTF-8")));
         //поток, кот слушает вход.соединение
          rxThread= new Thread(new Runnable() {  //создание анонимного класса runnalbe
-             @Override
+             @Override //переопределение метода
              public void run() {  //слушаем вход соединения
                  try {
                      eventListener.onConnectionReady(TCPConnection.this);
